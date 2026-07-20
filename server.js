@@ -48,19 +48,23 @@ app.use((req, res) => {
     `);
 });
 
-app.listen(config.server.port, () => {
+if (process.env.VERCEL) {
+    module.exports = app;
+} else {
+    app.listen(config.server.port, () => {
 
-    console.log("=================================");
-    console.log(`${config.app.name} Server Running`);
-    console.log("=================================");
+        console.log("=================================");
+        console.log(`${config.app.name} Server Running`);
+        console.log("=================================");
 
-    console.log(
-        `Local URL : http://localhost:${config.server.port}`
-    );
+        console.log(
+            `Local URL : http://localhost:${config.server.port}`
+        );
 
-    console.log(
-        `Download URL : http://localhost:${config.server.port}${config.qr.redirectPath}`
-    );
+        console.log(
+            `Download URL : http://localhost:${config.server.port}${config.qr.redirectPath}`
+        );
 
-    console.log("=================================");
-});
+        console.log("=================================");
+    });
+}
