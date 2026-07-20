@@ -1,0 +1,27 @@
+{
+  "name": "veerfresh-qrcode",
+  "version": "1.0.0",
+  "description": "Smart QR Code generator for Veer Fresh",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "generate": "node generateQR.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "qr",
+    "veerfresh",
+    "playstore",
+    "appstore"
+  ],
+  "author": "Abhiyank Yadav",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.22.2",
+    "qr-code-styling": "^1.9.2",
+    "qrcode": "^1.5.4",
+    "sharp": "^0.35.3",
+    "svg2img": "^1.0.0-beta.2",
+    "ua-parser-js": "^2.0.10"
+  }
+}
